@@ -1,0 +1,31 @@
+priority -50
+
+snippet comp "new react component"
+var ${1} = React.createClass({
+	displayName: '${1}',
+	propTypes: {
+	${2}
+	},
+
+	render(): ReactElement {
+		return ${3:(
+			<h1>Sup Yo</h1>
+		)}
+	}
+})
+endsnippet
+
+snippet class "new react class"
+class ${1} extends React.Component {
+	displayName: '${1}';
+	props: {
+		${2}
+	};
+
+	render(): ReactElement {
+		return ${3:(
+			<h1>Sup Yo</h1>
+		)}
+	}
+}
+endsnippet
