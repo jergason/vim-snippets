@@ -7,12 +7,6 @@ snippet get "Get Elements"
 getElement${1/(T)|.*/(?1:s)/}By${1:T}${1/(T)|(I)|.*/(?1:agName)(?2:d)/}('$2')
 endsnippet
 
-snippet '':f "object method string"
-'${1:${2:#thing}:${3:click}}': function(element) {
-	${VISUAL}$0
-}${10:,}
-endsnippet
-
 snippet :f "Object Method"
 ${1:method_name}: function(${3:attribute}) {
 	${VISUAL}$0
@@ -48,6 +42,12 @@ endsnippet
 
 snippet fun "function (fun)"
 function ${1:function_name}(${2:argument}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fun* "generator function"
+function* ${1:function_name}(${2:argument}) {
 	${VISUAL}$0
 }
 endsnippet
@@ -90,10 +90,6 @@ endsnippet
 
 snippet cdir "console.dir" b
 console.dir(${1:object})
-endsnippet
-
-snippet cdirx "console.dirxml" b
-console.dirxml(${1:object})
 endsnippet
 
 snippet ce "console.error" b
@@ -150,6 +146,47 @@ endsnippet
 
 snippet cw "console.warn" b
 console.warn(${1:'${2:value}'})
+endsnippet
+
+snippet > "one line arrow function"
+(${1}) => ${VISUAL}$0
+endsnippet
+
+snippet >> "multi line arrow function"
+(${1})${2: :any} => {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet imp "es6 import statement"
+import ${1} from '${2}'
+endsnippet
+
+snippet exp "export stuff"
+export default ${1}
+endsnippet
+
+snippet mx "module.exports"
+module.exports = ${1}
+endsnippet
+
+# testing snippets
+snippet desc "describe block"
+describe('${1}', function() {
+	${2}
+})
+endsnippet
+
+snippet it "it block"
+it('${1:does something rad}', function${2}() {
+	${3}
+})
+endsnippet
+
+snippet bef "before"
+before(function${1}(${2}) {
+	${3}
+})
 endsnippet
 
 # vim:ft=snippets:
