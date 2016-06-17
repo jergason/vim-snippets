@@ -172,20 +172,20 @@ endsnippet
 
 # testing snippets
 snippet desc "describe block"
-describe('${1}', function() {
+describe('${1}', () => {
 	${2}
 })
 endsnippet
 
 snippet it "it block"
-it('${1:does something rad}', function${2}() {
+it('${1:does something rad}', ${2:async }() => {
 	${3}
 })
 endsnippet
 
 snippet bef "before"
-before(function${1}(${2}) {
-	${3}
+before(${1:async }() => {
+	${2}
 })
 endsnippet
 
